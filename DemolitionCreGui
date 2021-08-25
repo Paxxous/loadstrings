@@ -1,0 +1,99 @@
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local LoopLevels = Instance.new("TextButton")
+local LoopMoney = Instance.new("TextButton")
+local Exit = Instance.new("TextButton")
+
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
+main.BorderSizePixel = 0
+main.Position = UDim2.new(0.331050247, 0, 0.300613463, 0)
+main.Size = UDim2.new(0, 443, 0, 325)
+main.Active = true
+main.Draggable = true
+
+Title.Name = "Title"
+Title.Parent = main
+Title.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 443, 0, 50)
+Title.Font = Enum.Font.Nunito
+Title.Text = "Demolition Crew Gui V1"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextSize = 28.000
+
+LoopLevels.Name = "LoopLevels"
+LoopLevels.Parent = main
+LoopLevels.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+LoopLevels.BorderSizePixel = 0
+LoopLevels.Position = UDim2.new(0.273137689, 0, 0.22769241, 0)
+LoopLevels.Size = UDim2.new(0, 200, 0, 84)
+LoopLevels.Font = Enum.Font.Nunito
+LoopLevels.Text = "Loop Levels"
+LoopLevels.TextColor3 = Color3.fromRGB(0, 0, 0)
+LoopLevels.TextSize = 30.000
+LoopLevels.MouseButton1Down:connect(function()
+	while true do
+
+		local args = {
+			[1] = "ThisCameFromTheRightPlaceYeet"
+		}
+
+		game:GetService("ReplicatedStorage").Level_UP:FireServer(unpack(args))
+		wait(.000000000001)
+
+	end
+
+end)
+
+LoopMoney.Name = "LoopMoney"
+LoopMoney.Parent = main
+LoopMoney.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+LoopMoney.BorderSizePixel = 0
+LoopMoney.Position = UDim2.new(0.273137689, 0, 0.649230838, 0)
+LoopMoney.Size = UDim2.new(0, 200, 0, 84)
+LoopMoney.Font = Enum.Font.Nunito
+LoopMoney.Text = "loop Money"
+LoopMoney.TextColor3 = Color3.fromRGB(0, 0, 0)
+LoopMoney.TextSize = 30.000
+LoopMoney.MouseButton1Down:connect(function()
+	while true do
+
+		local args = {
+			[1] =  436071.62670509,
+			[2] = "Money",
+			[3] = "ThisAlsoCameFromTheRightPlaceNowChanged"
+		}
+
+		game:GetService("ReplicatedStorage").Reward_From_GUI:FireServer(unpack(args))
+		wait(.000000000001)
+	end
+
+end)
+
+Exit.Name = "Exit"
+Exit.Parent = main
+Exit.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+Exit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Exit.BorderSizePixel = 0
+Exit.Position = UDim2.new(0.864559829, 0, 0.0184615385, 0)
+Exit.Size = UDim2.new(0, 54, 0, 38)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = "X"
+Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Exit.TextSize = 52.000
+Exit.MouseButton1Down:connect(function()
+	ScreenGui:Destroy()
+	main:Destroy()
+	Title:Destroy()
+	LoopLevels:Destroy()
+	LoopMoney:Destroy()
+	Exit:Destroy()
+	print("Successfully Destroyed Gui")
+end)
