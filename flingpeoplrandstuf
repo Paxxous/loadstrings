@@ -1,4 +1,9 @@
+if getgenv().thisisLoaded == true then
+    print("The gui is already loaded!")
+    ScreenGui:Destroy()
+end
 
+getgenv().thisisLoaded = true
 
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
