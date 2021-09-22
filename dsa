@@ -1,0 +1,26 @@
+from tkinter import *
+
+root = Tk()
+
+root.title("Paxx's notetaker")
+
+root.geometry('500x500')
+root.minsize(300, 300)
+
+def click():
+    mylabel = Label(root, text=ase.get())
+    mylabel.pack()
+    f = open(ase.get(), "w")
+    f.write(ase.get())
+    f.close()
+
+ase = Entry(root)
+ase.pack()
+
+buttoun = Button(root, text="Take Note", padx="10", pady="10", command=click, font="sans_serif")
+buttoun.pack()
+
+
+
+
+root.mainloop()
